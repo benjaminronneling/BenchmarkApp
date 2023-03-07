@@ -13,6 +13,9 @@ import XCTest
 import Foundation
 
 final class UIKitTests: XCTestCase {
+    
+    let iterationCountForStaticElementsTests = 4;
+    let iterationCountForAnimatedElementsTests = 4;
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -23,99 +26,79 @@ final class UIKitTests: XCTestCase {
         // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
  
-
-//    func testExample() throws {
-//        // UI tests must launch the application that they test.
-//        let app = XCUIApplication()
-//        app.launch()
-//
-//        // Use XCTAssert and related functions to verify your tests produce the correct results.
-//    }
-
-//    func testLaunchPerformance() throws {
-//        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
-//            // This measures how long it takes to launch your application.
-//            measure(metrics: [XCTApplicationLaunchMetric()]) {
-//                XCUIApplication().launch()
-//            }
-//        }
-//    }
-    
+ 
      
     
-    func testLotsOfTextPerformance() throws {
+    func testTextPerformanceInUIKit() throws {
         let app = XCUIApplication()
         app.launch()
           
          
         let measureOptions = XCTMeasureOptions()
         measureOptions.invocationOptions = [.manuallyStop]
-        measureOptions.iterationCount = 4
+        measureOptions.iterationCount = iterationCountForStaticElementsTests
 
-        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app), XCTOSSignpostMetric.scrollingAndDecelerationMetric],
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
             options: measureOptions) {
             
            app.staticTexts["Texts"].tap()
             stopMeasuring()
             app.terminate()
             app.launch()
-//           app.navigationBars["UIKit"].buttons["UIKit"].tap()
         }
         
     }
     
-    func testLotsOfButtonsPerformance() throws {
+    func testButtonsPerformanceInUIKit() throws {
         let app = XCUIApplication()
         app.launch()
           
          
         let measureOptions = XCTMeasureOptions()
         measureOptions.invocationOptions = [.manuallyStop]
-        measureOptions.iterationCount = 4
+        measureOptions.iterationCount = iterationCountForStaticElementsTests
 
-        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app), XCTOSSignpostMetric.scrollingAndDecelerationMetric],
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
             options: measureOptions) {
             
            app.staticTexts["Buttons"].tap()
             stopMeasuring()
             app.terminate()
             app.launch()
-//           app.navigationBars["UIKit"].buttons["UIKit"].tap()
         }
         
     }
     
-    func testLotsOfImagesPerformance() throws {
+    func testImagesPerformanceInUIKit() throws {
         let app = XCUIApplication()
         app.launch()
           
          
         let measureOptions = XCTMeasureOptions()
         measureOptions.invocationOptions = [.manuallyStop]
-        measureOptions.iterationCount = 4
+        measureOptions.iterationCount = iterationCountForStaticElementsTests
 
-        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app), XCTOSSignpostMetric.scrollingAndDecelerationMetric],
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
             options: measureOptions) {
             
            app.staticTexts["Images"].tap()
             stopMeasuring()
             app.terminate()
             app.launch()
-//           app.navigationBars["UIKit"].buttons["UIKit"].tap()
         }
         
     }
     
-    func testBlurPerformance() throws {
+    func testBlurPerformanceInUIKit() throws {
         let app = XCUIApplication()
         app.launch()
           
          
         let measureOptions = XCTMeasureOptions()
         measureOptions.invocationOptions = [.manuallyStop]
-        measureOptions.iterationCount = 4
+        measureOptions.iterationCount = iterationCountForStaticElementsTests
 
-        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app), XCTOSSignpostMetric.scrollingAndDecelerationMetric],
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
             options: measureOptions) {
             
            app.staticTexts["Blur"].tap()
@@ -127,39 +110,78 @@ final class UIKitTests: XCTestCase {
     }
     
     
-    func testScrollingAnimationPerformance() throws {
-        let app = XCUIApplication()
-        app.launch()
-//        app.staticTexts["Collection View"].tap()
-        app.staticTexts["Texts"].tap()
-        
-        let foodCollection = app.collectionViews.firstMatch
-         
-        let measureOptions = XCTMeasureOptions()
-        measureOptions.invocationOptions = [.manuallyStop]
-        measureOptions.iterationCount = 4
-
-        measure(metrics: [XCTOSSignpostMetric.scrollingAndDecelerationMetric, XCTCPUMetric(application: app)],
-            options: measureOptions) {
-             
-            foodCollection.swipeUp(velocity: .fast)
-            stopMeasuring()
-            foodCollection.swipeDown(velocity: .fast)
-        }
-    }
-    
-    
-    
-    func testAnimationImagesPerformance() throws {
+    func testCollectionViewPerformanceInUIKit() throws {
         let app = XCUIApplication()
         app.launch()
           
          
         let measureOptions = XCTMeasureOptions()
         measureOptions.invocationOptions = [.manuallyStop]
-        measureOptions.iterationCount = 4
+        measureOptions.iterationCount = iterationCountForStaticElementsTests
 
-        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app), XCTOSSignpostMetric.scrollingAndDecelerationMetric],
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+            options: measureOptions) {
+            
+           app.staticTexts["Collection View"].tap()
+            stopMeasuring()
+            app.terminate()
+            app.launch()
+        }
+        
+    }
+    
+    
+    func testTextAnimationPerformanceInUIKit() throws {
+        let app = XCUIApplication()
+        app.launch()
+         
+         
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStop]
+        measureOptions.iterationCount = iterationCountForAnimatedElementsTests
+
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+            options: measureOptions) {
+            
+           app.staticTexts["Animation: text"].tap()
+            stopMeasuring()
+            app.terminate()
+            app.launch()
+        }
+    }
+    
+    
+    func testButtonAnimationPerformanceInUIKit() throws {
+        let app = XCUIApplication()
+        app.launch()
+         
+         
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStop]
+        measureOptions.iterationCount = iterationCountForAnimatedElementsTests
+
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+            options: measureOptions) {
+            
+           app.staticTexts["Animation: buttons"].tap()
+            stopMeasuring()
+            app.terminate()
+            app.launch()
+        }
+    }
+    
+    
+    
+    func testImageAnimationPerformanceInUIKit() throws {
+        let app = XCUIApplication()
+        app.launch()
+          
+         
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStop]
+        measureOptions.iterationCount = iterationCountForAnimatedElementsTests
+
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
             options: measureOptions) {
             
            app.staticTexts["Animation: images"].tap()
@@ -170,18 +192,16 @@ final class UIKitTests: XCTestCase {
         
     }
     
-    
-    func testAnimatedBlurredViewsPerformance() throws {
+    func testBlurAnimationPerformanceInUIKit() throws {
         let app = XCUIApplication()
         app.launch()
           
          
         let measureOptions = XCTMeasureOptions()
         measureOptions.invocationOptions = [.manuallyStop]
-        measureOptions.iterationCount = 4
-          
+        measureOptions.iterationCount = iterationCountForAnimatedElementsTests
 
-        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app), XCTOSSignpostMetric.scrollingAndDecelerationMetric],
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
             options: measureOptions) {
             
            app.staticTexts["Animation: blur"].tap()
@@ -191,25 +211,25 @@ final class UIKitTests: XCTestCase {
         }
         
     }
+     
     
-    
-    func testAnimationScrollPerformance() throws {
+    func testScrollAnimationPerformanceInUIKit() throws {
         let app = XCUIApplication()
         app.launch()
         app.staticTexts["Animation: scroll"].tap()
         
-        let foodCollection = app.collectionViews.firstMatch
+        let collection = app.collectionViews.firstMatch
          
         let measureOptions = XCTMeasureOptions()
         measureOptions.invocationOptions = [.manuallyStop]
-        measureOptions.iterationCount = 4
+        measureOptions.iterationCount = iterationCountForAnimatedElementsTests
 
-        measure(metrics: [XCTOSSignpostMetric.scrollingAndDecelerationMetric, XCTCPUMetric(application: app)],
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app), XCTOSSignpostMetric.scrollingAndDecelerationMetric],
             options: measureOptions) {
              
-            foodCollection.swipeUp(velocity: .fast)
+            collection.swipeUp(velocity: .fast)
             stopMeasuring()
-            foodCollection.swipeDown(velocity: .fast)
+            collection.swipeDown(velocity: .fast)
         }
     }
     

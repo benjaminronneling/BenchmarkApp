@@ -257,8 +257,8 @@
 		521BD61C29AA055400B2F578 /* BenchmarkAppUITests */ = {
 			isa = PBXGroup;
 			children = (
-				521BD62729AA199300B2F578 /* SwiftUI tests */,
 				521BD62629AA194000B2F578 /* UIKit tests */,
+				521BD62729AA199300B2F578 /* SwiftUI tests */,
 				521BD61F29AA055400B2F578 /* BenchmarkAppUITestsLaunchTests.swift */,
 			);
 			path = BenchmarkAppUITests;
@@ -343,8 +343,8 @@
 		52AF888829A4E87200033991 /* BenchmarkApp */ = {
 			isa = PBXGroup;
 			children = (
-				520E4B3A29A631BC00F37800 /* SwiftUI */,
 				520E4B3929A631AF00F37800 /* UIKit */,
+				520E4B3A29A631BC00F37800 /* SwiftUI */,
 				52AF888929A4E87200033991 /* AppDelegate.swift */,
 				52AF888B29A4E87200033991 /* SceneDelegate.swift */,
 				52AF889229A4E87300033991 /* Assets.xcassets */,

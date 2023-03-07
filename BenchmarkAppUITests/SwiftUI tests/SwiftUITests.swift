@@ -9,6 +9,9 @@ import XCTest
 
 final class SwiftUITests: XCTestCase {
     
+    let iterationCountForStaticElementsTests = 4;
+    let iterationCountForAnimatedElementsTests = 4;
+    
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         
@@ -19,7 +22,7 @@ final class SwiftUITests: XCTestCase {
     }
     
     
-    func testLotsOfTextPerformance() throws {
+    func testTextPerformanceInSwiftUI() throws {
         
         let app = XCUIApplication()
         app.launch()
@@ -27,9 +30,9 @@ final class SwiftUITests: XCTestCase {
         
         let measureOptions = XCTMeasureOptions()
         measureOptions.invocationOptions = [.manuallyStop]
-        measureOptions.iterationCount = 4
+        measureOptions.iterationCount = iterationCountForStaticElementsTests
         
-        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app), XCTOSSignpostMetric.scrollingAndDecelerationMetric],
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
                 options: measureOptions) {
             
             app.buttons["Texts"].tap()
@@ -37,13 +40,12 @@ final class SwiftUITests: XCTestCase {
             app.terminate()
             app.launch()
             app.tabBars["Tab Bar"].buttons["SwiftUI"].tap()
-            
-            //            app.buttons["Back"].tap()
+             
         }
         
     }
     
-    func testLotsOfButtonsPerformance() throws {
+    func testButtonsPerformanceInSwiftUI() throws {
         
         let app = XCUIApplication()
         app.launch()
@@ -51,9 +53,9 @@ final class SwiftUITests: XCTestCase {
         
         let measureOptions = XCTMeasureOptions()
         measureOptions.invocationOptions = [.manuallyStop]
-        measureOptions.iterationCount = 4
+        measureOptions.iterationCount = iterationCountForStaticElementsTests
         
-        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app), XCTOSSignpostMetric.scrollingAndDecelerationMetric],
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
                 options: measureOptions) {
             
             app.buttons["Buttons"].tap()
@@ -66,7 +68,7 @@ final class SwiftUITests: XCTestCase {
     }
     
     
-    func testLotsOfImagesPerformance() throws {
+    func testImagesPerformanceInSwiftUI() throws {
         
         let app = XCUIApplication()
         app.launch()
@@ -74,9 +76,9 @@ final class SwiftUITests: XCTestCase {
         
         let measureOptions = XCTMeasureOptions()
         measureOptions.invocationOptions = [.manuallyStop]
-        measureOptions.iterationCount = 4
+        measureOptions.iterationCount = iterationCountForStaticElementsTests
         
-        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app), XCTOSSignpostMetric.scrollingAndDecelerationMetric],
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
                 options: measureOptions) {
             
             app.buttons["Images"].tap()
@@ -84,14 +86,12 @@ final class SwiftUITests: XCTestCase {
             app.terminate()
             app.launch()
             app.tabBars["Tab Bar"].buttons["SwiftUI"].tap()
-            
-            //            app.buttons["Back"].tap()
         }
     }
     
     
     
-    func testBlurPerformance() throws {
+    func testBlurPerformanceInSwiftUI() throws {
         
         let app = XCUIApplication()
         app.launch()
@@ -99,9 +99,9 @@ final class SwiftUITests: XCTestCase {
         
         let measureOptions = XCTMeasureOptions()
         measureOptions.invocationOptions = [.manuallyStop]
-        measureOptions.iterationCount = 4
+        measureOptions.iterationCount = iterationCountForStaticElementsTests
         
-        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app), XCTOSSignpostMetric.scrollingAndDecelerationMetric],
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
                 options: measureOptions) {
             
             app.buttons["Blur"].tap()
@@ -114,7 +114,32 @@ final class SwiftUITests: XCTestCase {
     }
     
     
-    func testImageAnimationPerformance() throws {
+    
+    func testListPerformanceInSwiftUI() throws {
+        
+        let app = XCUIApplication()
+        app.launch()
+        app.tabBars["Tab Bar"].buttons["SwiftUI"].tap()
+         
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStop]
+        measureOptions.iterationCount = iterationCountForStaticElementsTests
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+             
+            app.buttons["List (CollectionView)"].tap()
+            stopMeasuring()
+            app.terminate()
+            app.launch()
+            app.tabBars["Tab Bar"].buttons["SwiftUI"].tap()
+            
+        }
+    }
+    
+    
+    
+    func testTextAnimationPerformanceInSwiftUI() throws {
         
         let app = XCUIApplication()
         app.launch()
@@ -122,9 +147,56 @@ final class SwiftUITests: XCTestCase {
         
         let measureOptions = XCTMeasureOptions()
         measureOptions.invocationOptions = [.manuallyStop]
-        measureOptions.iterationCount = 4
+        measureOptions.iterationCount = iterationCountForAnimatedElementsTests
         
-        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app), XCTOSSignpostMetric.scrollingAndDecelerationMetric],
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+            
+            app.buttons["Animation: text"].tap()
+            stopMeasuring()
+            app.terminate()
+            app.launch()
+            app.tabBars["Tab Bar"].buttons["SwiftUI"].tap()
+        }
+    }
+    
+    
+    
+    
+    func testButtonAnimationPerformanceInSwiftUI() throws {
+        
+        let app = XCUIApplication()
+        app.launch()
+        app.tabBars["Tab Bar"].buttons["SwiftUI"].tap()
+        
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStop]
+        measureOptions.iterationCount = iterationCountForAnimatedElementsTests
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+            
+            app.buttons["Animation: buttons"].tap()
+            stopMeasuring()
+            app.terminate()
+            app.launch()
+            app.tabBars["Tab Bar"].buttons["SwiftUI"].tap()
+        }
+    }
+    
+    
+    
+    func testImageAnimationPerformanceInSwiftUI() throws {
+        
+        let app = XCUIApplication()
+        app.launch()
+        app.tabBars["Tab Bar"].buttons["SwiftUI"].tap()
+        
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStop]
+        measureOptions.iterationCount = iterationCountForAnimatedElementsTests
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
                 options: measureOptions) {
             
             app.buttons["Animation: images"].tap()
@@ -135,7 +207,29 @@ final class SwiftUITests: XCTestCase {
         }
     }
     
-    func testAnimationScrollPerformance() throws {
+    
+    func testBlurAnimationPerformanceInSwiftUI() throws {
+        
+        let app = XCUIApplication()
+        app.launch()
+        app.tabBars["Tab Bar"].buttons["SwiftUI"].tap()
+        
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStop]
+        measureOptions.iterationCount = iterationCountForAnimatedElementsTests
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+            
+            app.buttons["Animation: blur"].tap()
+            stopMeasuring()
+            app.terminate()
+            app.launch()
+            app.tabBars["Tab Bar"].buttons["SwiftUI"].tap()
+        }
+    }
+    
+    func testScrollAnimationPerformanceInSwiftUI() throws {
         
         let app = XCUIApplication()
         app.launch()
@@ -144,7 +238,7 @@ final class SwiftUITests: XCTestCase {
         
         let measureOptions = XCTMeasureOptions()
         measureOptions.invocationOptions = [.manuallyStop]
-        measureOptions.iterationCount = 4
+        measureOptions.iterationCount = iterationCountForAnimatedElementsTests
         
         let list =  app.collectionViews.firstMatch
         
