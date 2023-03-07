@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites name='All' tests='2' failures='0'>
+  <testsuite name='BenchmarkAppUITests - Benjamin’s iPhone - 16.3.1' tests='2' failures='0'>
+  <testcase classname='BenchmarkAppUITests - Benjamin’s iPhone - 16.3.1' name='testScrollingAnimationPerformance()' time='86.14'>
+    <system-out>Start Test at 2023-02-25 13:35:11.672</system-out>
+    <system-out>Set Up</system-out>
+    <system-out>Open com.rabbheat.BenchmarkApp</system-out>
+    <system-out>  Launch com.rabbheat.BenchmarkApp</system-out>
+    <system-out>    Setting up automation session</system-out>
+    <system-out>    Wait for com.rabbheat.BenchmarkApp to idle</system-out>
+    <system-out>Tap &quot;Collection View&quot; StaticText</system-out>
+    <system-out>  Wait for com.rabbheat.BenchmarkApp to idle</system-out>
+    <system-out>  Find the &quot;Collection View&quot; StaticText</system-out>
+    <system-out>  Check for interrupting elements affecting &quot;Collection View&quot; StaticText</system-out>
+    <system-out>  Synthesize event</system-out>
+    <system-out>  Wait for com.rabbheat.BenchmarkApp to idle</system-out>
+    <system-out>Swipe up CollectionView</system-out>
+    <system-out>  Wait for com.rabbheat.BenchmarkApp to idle</system-out>
+    <system-out>  Find the CollectionView</system-out>
+    <system-out>  Check for interrupting elements affecting CollectionView</system-out>
+    <system-out>  Synthesize event</system-out>
+    <system-out>  Wait for com.rabbheat.BenchmarkApp to idle</system-out>
+    <system-out>Swipe down CollectionView at {{0.0, 0.0}, {414.0, 896.0}}</system-out>
+    <system-out>  Wait for com.rabbheat.BenchmarkApp to idle</system-out>
+    <system-out>  Find the CollectionView at {{0.0, 0.0}, {414.0, 896.0}}</system-out>
+    <system-out>  Check for interrupting elements affecting CollectionView</system-out>
+    <system-out>  Synthesize event</system-out>
+    <system-out>  Wait for com.rabbheat.BenchmarkApp to idle</system-out>
+    <system-out>Swipe up CollectionView at {{0.0, 0.0}, {414.0, 896.0}}</system-out>
+    <system-out>  Wait for com.rabbheat.BenchmarkApp to idle</system-out>
+    <system-out>  Find the CollectionView at {{0.0, 0.0}, {414.0, 896.0}}</system-out>
+    <system-out>  Check for interrupting elements affecting CollectionView</system-out>
+    <system-out>  Synthesize event</system-out>
+    <system-out>  Wait for com.rabbheat.BenchmarkApp to idle</system-out>
+    <system-out>Swipe down CollectionView at {{0.0, 0.0}, {414.0, 896.0}}</system-out>
+    <system-out>  Wait for com.rabbheat.BenchmarkApp to idle</system-out>
+    <system-out>  Find the CollectionView at {{0.0, 0.0}, {414.0, 896.0}}</system-out>
+    <system-out>  Check for interrupting elements affecting CollectionView</system-out>
+    <system-out>  Synthesize event</system-out>
+    <system-out>  Wait for com.rabbheat.BenchmarkApp to idle</system-out>
+    <system-out>Swipe up CollectionView at {{0.0, 0.0}, {414.0, 896.0}}</system-out>
+    <system-out>  Wait for com.rabbheat.BenchmarkApp to idle</system-out>
+    <system-out>  Find the CollectionView at {{0.0, 0.0}, {414.0, 896.0}}</system-out>
+    <system-out>  Check for interrupting elements affecting CollectionView</system-out>
+    <system-out>  Synthesize event</system-out>
+    <system-out>  Wait for com.rabbheat.BenchmarkApp to idle</system-out>
+    <system-out>Swipe down CollectionView at {{0.0, 0.0}, {414.0, 896.0}}</system-out>
+    <system-out>  Wait for com.rabbheat.BenchmarkApp to idle</system-out>
+    <system-out>  Find the CollectionView at {{0.0, 0.0}, {414.0, 896.0}}</system-out>
+    <system-out>  Check for interrupting elements affecting CollectionView</system-out>
+    <system-out>  Synthesize event</system-out>
+    <system-out>  Wait for com.rabbheat.BenchmarkApp to idle</system-out>
+    <system-out>Swipe up CollectionView at {{0.0, 0.0}, {414.0, 896.0}}</system-out>
+    <system-out>  Wait for com.rabbheat.BenchmarkApp to idle</system-out>
+    <system-out>  Find the CollectionView at {{0.0, 0.0}, {414.0, 896.0}}</system-out>
+    <system-out>  Check for interrupting elements affecting CollectionView</system-out>
+    <system-out>  Synthesize event</system-out>
+    <system-out>  Wait for com.rabbheat.BenchmarkApp to idle</system-out>
+    <system-out>Swipe down CollectionView at {{0.0, 0.0}, {414.0, 896.0}}</system-out>
+    <system-out>  Wait for com.rabbheat.BenchmarkApp to idle</system-out>
+    <system-out>  Find the CollectionView at {{0.0, 0.0}, {414.0, 896.0}}</system-out>
+    <system-out>  Check for interrupting elements affecting CollectionView</system-out>
+    <system-out>  Synthesize event</system-out>
+    <system-out>  Wait for com.rabbheat.BenchmarkApp to idle</system-out>
+    <system-out>Swipe up CollectionView at {{0.0, 0.0}, {414.0, 896.0}}</system-out>
+    <system-out>  Wait for com.rabbheat.BenchmarkApp to idle</system-out>
+    <system-out>  Find the CollectionView at {{0.0, 0.0}, {414.0, 896.0}}</system-out>
+    <system-out>  Check for interrupting elements affecting CollectionView</system-out>
+    <system-out>  Synthesize event</system-out>
+    <system-out>  Wait for com.rabbheat.BenchmarkApp to idle</system-out>
+    <system-out>Swipe down CollectionView at {{0.0, 0.0}, {414.0, 896.0}}</system-out>
+    <system-out>  Wait for com.rabbheat.BenchmarkApp to idle</system-out>
+    <system-out>  Find the CollectionView at {{0.0, 0.0}, {414.0, 896.0}}</system-out>
+    <system-out>  Check for interrupting elements affecting CollectionView</system-out>
+    <system-out>  Synthesize event</system-out>
+    <system-out>  Wait for com.rabbheat.BenchmarkApp to idle</system-out>
+    <system-out>Tear Down</system-out>
+  </testcase>
+  <testcase classname='BenchmarkAppUITestsLaunchTests - Benjamin’s iPhone - 16.3.1' name='testLaunch()' time='15.83'>
+    <system-out>Setting device orientation to Portrait</system-out>
+    <system-out>  Wait for com.rabbheat.BenchmarkApp to idle</system-out>
+    <system-out>Setting appearance mode to Light</system-out>
+    <system-out>  Wait for com.rabbheat.BenchmarkApp to idle</system-out>
+    <system-out>Start Test at 2023-02-25 13:36:37.847</system-out>
+    <system-out>Set Up</system-out>
+    <system-out>Open com.rabbheat.BenchmarkApp</system-out>
+    <system-out>  Launch com.rabbheat.BenchmarkApp</system-out>
+    <system-out>    Terminate com.rabbheat.BenchmarkApp:8966</system-out>
+    <system-out>    Setting up automation session</system-out>
+    <system-out>    Wait for com.rabbheat.BenchmarkApp to idle</system-out>
+    <system-out>Find the Target Application &apos;com.rabbheat.BenchmarkApp&apos;</system-out>
+    <system-out>Added attachment named &apos;Launch Screen&apos;</system-out>
+    <system-out>Tear Down</system-out>
+    <system-out>Setting device orientation to Landscape Right</system-out>
+    <system-out>  Wait for com.rabbheat.BenchmarkApp to idle</system-out>
+    <system-out>Setting appearance mode to Light</system-out>
+    <system-out>  Wait for com.rabbheat.BenchmarkApp to idle</system-out>
+    <system-out>Start Test at 2023-02-25 13:36:42.830</system-out>
+    <system-out>Set Up</system-out>
+    <system-out>Open com.rabbheat.BenchmarkApp</system-out>
+    <system-out>  Launch com.rabbheat.BenchmarkApp</system-out>
+    <system-out>    Terminate com.rabbheat.BenchmarkApp:8978</system-out>
+    <system-out>    Setting up automation session</system-out>
+    <system-out>    Wait for com.rabbheat.BenchmarkApp to idle</system-out>
+    <system-out>Find the Target Application &apos;com.rabbheat.BenchmarkApp&apos;</system-out>
+    <system-out>Added attachment named &apos;Launch Screen&apos;</system-out>
+    <system-out>Tear Down</system-out>
+    <system-out>Setting device orientation to Portrait</system-out>
+    <system-out>  Wait for com.rabbheat.BenchmarkApp to idle</system-out>
+    <system-out>Setting appearance mode to Dark</system-out>
+    <system-out>  Wait for com.rabbheat.BenchmarkApp to idle</system-out>
+    <system-out>Start Test at 2023-02-25 13:36:45.798</system-out>
+    <system-out>Set Up</system-out>
+    <system-out>Open com.rabbheat.BenchmarkApp</system-out>
+    <system-out>  Launch com.rabbheat.BenchmarkApp</system-out>
+    <system-out>    Terminate com.rabbheat.BenchmarkApp:8979</system-out>
+    <system-out>    Setting up automation session</system-out>
+    <system-out>    Wait for com.rabbheat.BenchmarkApp to idle</system-out>
+    <system-out>Find the Target Application &apos;com.rabbheat.BenchmarkApp&apos;</system-out>
+    <system-out>Added attachment named &apos;Launch Screen&apos;</system-out>
+    <system-out>Tear Down</system-out>
+    <system-out>Setting device orientation to Landscape Right</system-out>
+    <system-out>  Wait for com.rabbheat.BenchmarkApp to idle</system-out>
+    <system-out>Setting appearance mode to Dark</system-out>
+    <system-out>  Wait for com.rabbheat.BenchmarkApp to idle</system-out>
+    <system-out>Start Test at 2023-02-25 13:36:50.760</system-out>
+    <system-out>Set Up</system-out>
+    <system-out>Open com.rabbheat.BenchmarkApp</system-out>
+    <system-out>  Launch com.rabbheat.BenchmarkApp</system-out>
+    <system-out>    Terminate com.rabbheat.BenchmarkApp:8981</system-out>
+    <system-out>    Setting up automation session</system-out>
+    <system-out>    Wait for com.rabbheat.BenchmarkApp to idle</system-out>
+    <system-out>Find the Target Application &apos;com.rabbheat.BenchmarkApp&apos;</system-out>
+    <system-out>Added attachment named &apos;Launch Screen&apos;</system-out>
+    <system-out>Tear Down</system-out>
+  </testcase>
+  </testsuite>
+</testsuites>
