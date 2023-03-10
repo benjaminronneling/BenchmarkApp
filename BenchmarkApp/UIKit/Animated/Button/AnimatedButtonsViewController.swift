@@ -49,7 +49,7 @@ class AnimatedButtonsViewController: UIViewController {
                button.setTitle("\(c)", for: .normal)
                button.titleLabel?.font = UIFont.systemFont(ofSize: 4)
                 
-               UIView.animate(withDuration: TimeInterval((Double(r) / 10.0)+1), delay: TimeInterval(Double(c) / 10.0), options: [.repeat, .autoreverse, .curveEaseInOut], animations: {
+               UIView.animate(withDuration: TimeInterval((Double(r) / 10.0)+1), delay: TimeInterval(Double(c) / 10.0), options: [.repeat, .autoreverse], animations: {
                    button.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
                    button.transform = CGAffineTransform(rotationAngle: .pi)
                    button.alpha = 0

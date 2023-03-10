@@ -4,46 +4,46 @@
 //
 //  Created by Macbook Pro on 2023-02-24.
 //
- 
-import SwiftUI 
+
+import SwiftUI
+
+
+struct AnimatedImage : View{
+    let imageName: String
+    let r: Int
+    @State var degrees: Double = 0
+    @State var scale: Double
+    @State var opacity: Double = 1
+    
+    var body: some View{
+        Image(imageName)
+            .resizable()
+            .frame(width: 64, height: 64)
+            .rotationEffect(.degrees(degrees))
+            .scaleEffect(scale)
+            .opacity(opacity)
+            .animation(.linear(duration: Double(r))
+                .delay(0)
+                .repeatForever(autoreverses: true), value: degrees)
+            .onAppear {
+                degrees = -180
+                scale = 0
+                opacity = 0
+            }
+    }
+}
+
 struct AnimatingImagesSwiftUIView: View {
     
-    @State var degrees: [Double] = Array(repeating: 0.0, count: 7) 
-    @State var scales: [Double] = [4.5,4,3.5,3,2.5,2,1.5]
-    @State var opacities: [Double] = Array(repeating: 1.0, count: 7)
-
     var body: some View {
         
         ZStack{
-            // Background
-            Rectangle()
-                .foregroundColor(.orange)
-                .ignoresSafeArea()
-            
-            ZStack{
-                ForEach(0..<7) { i in
-                    createImage(imageName: "image\(i + 1)")
-                        .rotationEffect(Angle(degrees: degrees[i]))
-                        .scaleEffect(scales[i])
-                        .opacity(opacities[i])
-                        .onAppear {
-                            withAnimation(Animation.easeInOut(duration: Double(i+1)).repeatForever(autoreverses: true)) {
-                                self.degrees[i] = -180
-                                self.scales[i] = 0
-                                self.opacities[i] = 0
-                            }
-                        }
-                }
-                
-            }
+            ForEach(1..<8) { i in
+                AnimatedImage(imageName: "image\(i)",r: i, scale: (10 - Double(i)) / 2.0 )
+            } 
         }
-    }
-    
-    func createImage(imageName: String) -> some View{
-        
-        return Image(imageName)
-            .resizable()
-            .frame(width: 64, height: 64)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color.orange)
         
     }
 }

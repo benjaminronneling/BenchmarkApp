@@ -13,7 +13,7 @@ struct ListSwiftUIView: View {
     var body: some View {
             
             List{
-                ForEach(1..<100){ r in
+                ForEach(1..<100, id: \.self){ r in
                     HStack(spacing: 0){
                         DeckSwiftUIView()
                             .frame(width: 176, height: 240)
@@ -21,6 +21,7 @@ struct ListSwiftUIView: View {
                         DeckSwiftUIView()
                             .frame(width: 176, height: 240)
                     }
+                    .id(r)
                     .listRowSeparator(.hidden)
                     .listRowInsets(EdgeInsets())
                     .padding(5)

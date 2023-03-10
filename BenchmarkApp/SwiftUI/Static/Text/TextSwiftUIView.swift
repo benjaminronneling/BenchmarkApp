@@ -8,13 +8,7 @@
 import SwiftUI
 
 struct TextSwiftUIView: View {
-    var body: some View {
-        ZStack{
-//            Background
-            Rectangle()
-                .foregroundColor(.orange)
-                .ignoresSafeArea()
-            
+    var body: some View { 
             VStack(spacing: 0){
                 ForEach(0..<80){ _ in
                     HStack(spacing: 0){
@@ -25,7 +19,8 @@ struct TextSwiftUIView: View {
                     }
                 }
             }
-        }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color.orange)
     }
 }
 

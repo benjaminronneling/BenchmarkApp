@@ -62,7 +62,7 @@ class AnimatedBlurredViewsViewController: UIViewController {
                 let blurView = UIVisualEffectView(effect: blurEffect)
                 blurView.clipsToBounds = true
                 
-              UIView.animate(withDuration: TimeInterval((Double(r) / 10.0)+1), delay: TimeInterval(Double(c) / 10.0), options: [.repeat, .autoreverse, .curveEaseInOut], animations: {
+              UIView.animate(withDuration: TimeInterval((Double(r) / 10.0)+1), delay: TimeInterval(Double(c) / 10.0), options: [.repeat, .autoreverse], animations: {
                   blurView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
                   blurView.transform = CGAffineTransform(rotationAngle: .pi)
                   blurView.alpha = 0

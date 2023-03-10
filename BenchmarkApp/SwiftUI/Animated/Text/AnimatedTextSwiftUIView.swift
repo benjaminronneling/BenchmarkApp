@@ -7,38 +7,43 @@
 
 import SwiftUI
 
-struct AnimatedTextSwiftUIView: View { 
-    @State var degrees: [Double] = Array(repeating: 0, count: 30 * 20)
-    @State var scales: [Double] = Array(repeating: 1.5, count:  30 * 20)
-    @State var opacities: [Double] = Array(repeating: 1, count:  30 * 20)
+struct AnimatedText : View{
+    let r: Int
+    let c: Int
+    @State var degrees: Double = 0
+    @State var scale: Double = 1.5
+    @State var opacity: Double = 1
+    
+    var body: some View{
+        Text("\(c)")
+            .font(.system(size: 8))
+            .rotationEffect(.degrees(degrees))
+            .scaleEffect(scale)
+            .opacity(opacity)
+            .animation(.linear(duration: (Double(r) / 10.0)+1).delay(Double(c) / 10.0).repeatForever(autoreverses: true), value: degrees)
+            .onAppear {
+                degrees = -180
+                scale = 1
+                opacity = 0
+            }
+    }
+}
+
+struct AnimatedTextSwiftUIView: View {
+    
     var body: some View {
-        ZStack{
-            //            Background
-            Rectangle()
-                .foregroundColor(.orange)
-                .ignoresSafeArea()
-            
-            VStack(spacing: 5){
-                ForEach(0..<30){ r in
-                    HStack(spacing: 5){
-                        ForEach(0..<20){ c in
-                            Text("\(c)")
-                                .font(.system(size: 8))
-                                .rotationEffect(Angle(degrees: degrees[(r*c)+c]))
-                                .scaleEffect(scales[(r*c)+c])
-                                .opacity(opacities[(r*c)+c])
-                                .onAppear {
-                                    withAnimation(Animation.easeInOut(duration: (Double(r) / 10.0)+1).delay(Double(c) / 10.0).repeatForever(autoreverses: true)) {
-                                        self.degrees[(r*c)+c] = -180
-                                        self.scales[(r*c)+c] = 1
-                                        self.opacities[(r*c)+c] = 0
-                                    }
-                                }
-                        }
+        VStack(spacing: 5){
+            ForEach(0..<30){ r in
+                HStack(spacing: 5){
+                    ForEach(0..<20){ c in
+                        AnimatedText(r: r, c: c)
                     }
                 }
             }
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color.orange)
+        
     }
 }
 

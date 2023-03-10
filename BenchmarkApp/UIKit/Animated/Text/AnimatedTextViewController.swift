@@ -45,7 +45,7 @@ class AnimatedTextViewController: UIViewController {
                 label.text = "\(c)"
                 label.font = UIFont.systemFont(ofSize: 8)
                 
-                UIView.animate(withDuration: TimeInterval((Double(r) / 10.0)+1), delay: TimeInterval(Double(c) / 10.0), options: [.repeat, .autoreverse, .curveEaseInOut], animations: {
+                UIView.animate(withDuration: TimeInterval((Double(r) / 10.0)+1), delay: TimeInterval(Double(c) / 10.0), options: [.repeat, .autoreverse], animations: {
                     label.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
                     label.transform = CGAffineTransform(rotationAngle: .pi)
                     label.alpha = 0

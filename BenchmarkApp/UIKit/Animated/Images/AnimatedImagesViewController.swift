@@ -18,8 +18,7 @@ class AnimatedImagesViewController: UIViewController {
     var imageView5: UIImageView!
     var imageView6: UIImageView!
     var imageView7: UIImageView!
-    var imageView8: UIImageView!
-    var counter = 0
+    var imageView8: UIImageView! 
      
     
     override func viewDidLoad() {
@@ -55,37 +54,37 @@ class AnimatedImagesViewController: UIViewController {
         imageView5 = createImageView(name: "image5")
         imageView6 = createImageView(name: "image6")
         imageView7 = createImageView(name: "image7")
-        UIView.animate(withDuration: 1.0, delay: 0, options: [.repeat, .autoreverse, .curveEaseInOut], animations: {
+        UIView.animate(withDuration: 1.0, delay: 0, options: [.repeat, .autoreverse], animations: {
             self.imageView1.transform = CGAffineTransform(scaleX: 4.5, y: 4.5)
             self.imageView1.transform = CGAffineTransform(rotationAngle: .pi)
             self.imageView2.alpha = 0
         }, completion: nil)
-        UIView.animate(withDuration: 2.0, delay: 0, options: [.repeat, .autoreverse, .curveEaseInOut], animations: {
+        UIView.animate(withDuration: 2.0, delay: 0, options: [.repeat, .autoreverse], animations: {
             self.imageView2.transform = CGAffineTransform(scaleX: 4, y: 4)
             self.imageView2.transform = CGAffineTransform(rotationAngle: .pi)
             self.imageView2.alpha = 0
         }, completion: nil)
-        UIView.animate(withDuration: 3.0, delay: 0, options: [.repeat, .autoreverse, .curveEaseInOut], animations: {
+        UIView.animate(withDuration: 3.0, delay: 0, options: [.repeat, .autoreverse], animations: {
             self.imageView3.transform = CGAffineTransform(scaleX: 3.5, y: 3.5)
             self.imageView3.transform = CGAffineTransform(rotationAngle: .pi)
             self.imageView3.alpha = 0
         }, completion: nil)
-        UIView.animate(withDuration: 4.0, delay: 0, options: [.repeat, .autoreverse, .curveEaseInOut], animations: {
+        UIView.animate(withDuration: 4.0, delay: 0, options: [.repeat, .autoreverse], animations: {
             self.imageView4.transform = CGAffineTransform(scaleX: 3, y: 3)
             self.imageView4.transform = CGAffineTransform(rotationAngle: .pi)
             self.imageView4.alpha = 0
         }, completion: nil)
-        UIView.animate(withDuration: 5.0, delay: 0, options: [.repeat, .autoreverse, .curveEaseInOut], animations: {
+        UIView.animate(withDuration: 5.0, delay: 0, options: [.repeat, .autoreverse], animations: {
             self.imageView5.transform = CGAffineTransform(scaleX: 2.5, y: 2.5)
             self.imageView5.transform = CGAffineTransform(rotationAngle: .pi)
             self.imageView5.alpha = 0
         }, completion: nil)
-        UIView.animate(withDuration: 6.0, delay: 0, options: [.repeat, .autoreverse, .curveEaseInOut], animations: {
+        UIView.animate(withDuration: 6.0, delay: 0, options: [.repeat, .autoreverse], animations: {
             self.imageView6.transform = CGAffineTransform(scaleX: 2, y: 2)
             self.imageView6.transform = CGAffineTransform(rotationAngle: .pi)
             self.imageView6.alpha = 0
         }, completion: nil)
-        UIView.animate(withDuration: 7.0, delay: 0, options: [.repeat, .autoreverse, .curveEaseInOut], animations: {
+        UIView.animate(withDuration: 7.0, delay: 0, options: [.repeat, .autoreverse], animations: {
             self.imageView7.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
             self.imageView7.transform = CGAffineTransform(rotationAngle: .pi)
             self.imageView7.alpha = 0
